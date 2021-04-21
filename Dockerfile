@@ -10,9 +10,7 @@ RUN LOCATION=$(curl -s https://api.github.com/repos/cerr/octave-colab/releases/l
 | awk '{print "https://github.com/cerr/octave-colab/archive/" substr($2, 2, length($2)-3) ".zip"}') \
 ; curl -L -o octavecolab.zip $LOCATION
  
-RUN apt-get --yes install zip
-RUN unzip octavecolab.zip -d octavecolab
-RUN tar xzvf "octavecolab/octave-colab-6.2/octavecolab.tar.gz"
+RUN unzip octavecolab.zip -d octavecolab && tar xzvf "octavecolab/octave-colab-6.2/octavecolab.tar.gz"
 
 RUN export OCTAVE_EXECUTABLE=./octavecolab/bin/octave-cli && export PATH=./octavecolab/bin/:$PATH
 
