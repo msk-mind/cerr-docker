@@ -4,7 +4,7 @@ Idea: A few lines of python code invoke a matlab function (`radiomic_and_dosimet
 into the octave instance prior to running, and the dose information is pulled
 out once the function completes.
 
-There's an encompassing function/script called  in /ana/
+Scripts exist at /ana/ within the container.
 
 To build: `docker build . --tag msk-mind-cerr:latest`
 
