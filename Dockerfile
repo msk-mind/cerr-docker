@@ -24,9 +24,9 @@ RUN octave --eval "pkg install io-2.6.1.tar.gz" && \
     octave --eval "pkg install image-2.12.0.tar.gz" && \
     octave --eval "pkg install statistics-1.4.2.tar.gz"
 
-
 RUN mkdir /content && cd /content && git clone https://github.com/cerr/CERR.git && cd ./CERR && git checkout octave_dev && cd /
 
+# Copy analysis/function scripts to /ana
 RUN mkdir /ana
 COPY radiomic_and_dosimetric_feature_extraction.m /ana/radiomic_and_dosimetric_feature_extraction.m
 COPY run_cerr.py /ana/run_cerr.py
