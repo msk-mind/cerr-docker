@@ -29,6 +29,7 @@ RUN mkdir /content && cd /content && git clone https://github.com/cerr/CERR.git 
 # Copy analysis/function scripts to /ana
 RUN mkdir /ana
 COPY radiomic_and_dosimetric_feature_extraction.m /ana/radiomic_and_dosimetric_feature_extraction.m
+COPY radiomic_and_heterogeneity_extraction.m /ana/radiomic_and_heterogeneity_extraction.m
 COPY run_cerr.py /ana/run_cerr.py
 
 ENTRYPOINT [ "python3", "/ana/run_cerr.py" ]
